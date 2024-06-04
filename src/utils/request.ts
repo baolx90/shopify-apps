@@ -2,9 +2,7 @@
 import TokenManager, { injectBearer } from 'brainless-token-manager';
 import { extend } from 'umi-request';
 
-import { redirect } from 'react-router-dom';
 import { getAccessToken, getRefreshToken } from '@/store/auth/useAuth';
-import { ROUTE_PATH } from '@/constants/routes';
 
 const REQ_TIMEOUT = 25 * 1000;
 
@@ -51,9 +49,6 @@ const privateRequest = async (suffixUrl: string, method = 'get', configs?: any) 
     prefix: PREFIX_API,
     timeout: REQ_TIMEOUT,
     errorHandler: (error) => {
-      if(error.response.status == 401){
-        redirect(ROUTE_PATH.SIGN_IN);
-      }
       throw error?.data || error?.response;
     },
   });
