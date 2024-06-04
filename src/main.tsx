@@ -1,10 +1,15 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import { RouterProvider } from 'react-router-dom';
-import router from "./router";
+import 'antd/dist/reset.css';
+// import './styles/globals.scss';
+import './i18n';
+import { Provider } from 'jotai';
+import ReactDOM from 'react-dom/client';
 
-ReactDOM.createRoot(document.getElementById('root')!).render(
-  <React.StrictMode>
-    <RouterProvider router={router} />
-  </React.StrictMode>,
-)
+import App from './App';
+
+import 'react-nice-scroll/dist/styles.css';
+
+ReactDOM.createRoot(document.querySelector('#root') as HTMLElement).render(
+    <Provider>
+      <App />
+    </Provider>
+);

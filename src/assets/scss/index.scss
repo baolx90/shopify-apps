@@ -1,0 +1,64 @@
+@import 'config';
+@import 'fonts';
+@import 'header';
+@import 'footer';
+@import 'home';
+@import 'staticPages';
+@import 'responsive';
+@import 'login';
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 1rem;
+  line-height: 1.6;
+  background-color: #fff;
+  height: 100vh;
+  overflow: hidden !important;
+}
+
+a {
+  text-decoration: none;
+  color: $primary-color;
+}
+ul {
+  list-style: none;
+}
+img {
+  width: 100%;
+}
+
+.container-fluid {
+  margin: 0 auto;
+  max-width: 100%;
+  padding: 0 15px;
+}
+.container {
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 0 15px;
+}
+
+#root{
+  background: url('../orbital-symphony.jpg') fixed 0 0 no-repeat;
+}
+.ant-layout {
+  background: transparent;
+}
+.ant-layout-content {
+  background-color: transparent;
+  min-height: calc(100vh - #{$heightFooter} - #{$heightHeader}) !important;
+  overflow: auto;
+}
+.ant-layout.main-layout {
+  background-color: transparent;
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.6;
+}
